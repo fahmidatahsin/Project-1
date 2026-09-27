@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Hello, World!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    :root { color-scheme: dark; --ink:#f4f5ff; --muted:#abb2cc; --lime:#d5ff72; --violet:#9c83ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100svh; display:grid; place-items:center; overflow:hidden; color:var(--ink); font-family:'DM Sans', sans-serif; background:radial-gradient(ellipse at 16% 12%, #292450 0, transparent 37%), radial-gradient(ellipse at 85% 80%, #163d47 0, transparent 38%), #0b1020; }
+    body::before { content:""; position:fixed; inset:0; opacity:.17; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E"); }
+    .orb { position:fixed; width:20rem; aspect-ratio:1; border-radius:50%; filter:blur(80px); opacity:.2; animation:drift 13s ease-in-out infinite alternate; }
+    .orb.one { background:#8d6cff; top:-9rem; right:8%; } .orb.two { background:#51d8b0; bottom:-12rem; left:5%; animation-delay:-5s; }
+    main { position:relative; width:min(740px, calc(100% - 36px)); padding:clamp(32px, 8vw, 76px); border:1px solid #ffffff20; border-radius:28px; background:linear-gradient(145deg,#ffffff0d,#ffffff04); box-shadow:0 32px 100px #0007, inset 0 1px #ffffff12; backdrop-filter:blur(18px); animation:rise .9s cubic-bezier(.2,.8,.2,1) both; }
+    .topline { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:.78rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
+    .spark { width:8px; height:8px; border-radius:50%; background:var(--lime); box-shadow:0 0 16px #d5ff72; }
+    h1 { margin:30px 0 18px; font:600 clamp(3.4rem, 11vw, 7rem)/.94 'Space Grotesk', sans-serif; letter-spacing:-.075em; }
+    h1 span { display:block; color:transparent; background:linear-gradient(100deg,var(--lime),#8ae5d0 53%,var(--violet)); background-clip:text; -webkit-background-clip:text; }
+    p { max-width:440px; margin:0; color:var(--muted); font-size:clamp(1rem,2.5vw,1.15rem); line-height:1.75; }
+    .footer { display:flex; align-items:center; gap:12px; margin-top:48px; color:#838ba8; font-size:.85rem; }
+    .rule { width:34px; height:1px; background:linear-gradient(90deg,var(--lime),transparent); }
+    @keyframes rise { from { opacity:0; transform:translateY(18px) scale(.985); } to { opacity:1; transform:translateY(0) scale(1); } }
+    @keyframes drift { to { transform:translate(45px,35px) scale(1.12); } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; } }
+  </style>
+</head>
+<body>
+  <div class="orb one" aria-hidden="true"></div><div class="orb two" aria-hidden="true"></div>
+  <main>
+    <div class="topline"><span class="spark" aria-hidden="true"></span> A little something to begin</div>
+    <h1>Hello,<span>World!</span></h1>
+    <p>Every great idea starts somewhere. Here’s to the first line, the blank canvas, and everything you’ll make next.</p>
+    <div class="footer"><span class="rule" aria-hidden="true"></span> Made with curiosity</div>
+  </main>
+</body>
+</html>
